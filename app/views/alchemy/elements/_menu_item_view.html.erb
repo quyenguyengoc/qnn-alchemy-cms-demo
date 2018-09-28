@@ -1,0 +1,7 @@
+<li class="nav-item">
+  <%- cache(element) do -%>
+    <%= element_view_for(element) do |el| -%>
+      <%= el.render(:menu_item, {}, { class: 'nav-link js-scroll-trigger' }) %>
+    <%- end -%>
+  <%- end -%>
+</li>

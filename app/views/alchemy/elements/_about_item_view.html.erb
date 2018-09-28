@@ -1,0 +1,18 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element, tag: false) do |el| %>
+    <li class="<%= 'timeline-inverted' if el.render(:right_side) == 'true' %>">
+      <div class="timeline-image">
+        <%= el.render(:picture, {}, { class: 'rounded-circle img-fluid' }) %>
+      </div>
+      <div class="timeline-panel">
+        <div class="timeline-heading">
+          <h4><%= el.render :timeline %></h4>
+          <h4 class="subheading"><%= el.render :title %></h4>
+        </div>
+        <div class="timeline-body">
+          <%= el.render(:description, {}, {class: 'text-muted'}) %>
+        </div>
+      </div>
+    </li>
+  <%- end -%>
+<%- end -%>

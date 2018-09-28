@@ -1,0 +1,12 @@
+<div class="col-md-4">
+  <%- cache(element) do -%>
+    <%= element_view_for(element) do |el| -%>
+        <span class="fa-stack fa-4x">
+          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+          <%= fa_icon(el.ingredient(:icon), class: 'fa-stack-1x fa-inverse') if el.ingredient(:icon).present? %>
+        </span>
+        <h4 class="service-heading"><%= el.render :title %></h4>
+        <p class="text-muted"><%= el.render :description %></p>
+    <%- end -%>
+  <%- end -%>
+</div>

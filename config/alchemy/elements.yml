@@ -1,0 +1,120 @@
+# == In this configuration, you set up Alchemy's element layouts.
+#
+# For further information please see http://guides.alchemy-cms.com/stable/elements.html
+
+- name: menu
+  unique: true
+  contents:
+  - name: logo
+    type: EssenceText
+    default: :Start Bootstrap
+  nestable_elements:
+  - menu_item
+
+- name: menu_item
+  contents:
+  - name: menu_item
+    type: EssenceText
+    settings:
+      linkable: true
+
+- name: banner
+  unique: true
+  contents:
+  - name: intro_lead
+    type: EssenceText
+    unique: true
+    default: Welcome To Our Studio!
+  - name: intro_heading
+    type: EssenceText
+    unique: true
+    default: It's Nice To Meet You
+  - name: more_btn
+    type: EssenceText
+    unique: true
+    default: Tell Me More
+
+- name: block_items
+  unique: true
+  contents:
+  - name: block_item
+    type: EssenceText
+  nestable_elements: [services, portfolio, about]
+
+- name: services
+  unique: true
+  contents:
+  - name: title
+    type: EssenceText
+    default: SERVICES
+  - name: description
+    type: EssenceText
+    default: Lorem ipsum dolor sit amet consectetur.
+  nestable_elements:
+  - service
+
+- name: service
+  contents:
+  - name: icon
+    type: EssenceText
+    default: shopping-cart
+  - name: title
+    type: EssenceText
+    default: Web Security
+  - name: description
+    type: EssenceText
+    default: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+
+- name: portfolio
+  unique: true
+  contents:
+  - name: title
+    type: EssenceText
+    default: PORTFOLIO
+  - name: description
+    type: EssenceText
+    default: Lorem ipsum dolor sit amet consectetur.
+  nestable_elements:
+  - portfolio_item
+
+- name: portfolio_item
+  contents:
+  - name: title
+    type: EssenceText
+    default: Threads
+  - name: description
+    type: EssenceText
+    default: Illustration
+  - name: background
+    type: EssencePicture
+  - name: modal_target
+    type: EssenceText
+
+- name: about
+  unique: true
+  contents:
+  - name: title
+    type: EssenceText
+    default: ABOUT
+  - name: description
+    type: EssenceText
+    default: Lorem ipsum dolor sit amet consectetur.
+  nestable_elements:
+  - about_item
+
+- name: about_item
+  contents:
+  - name: right_side
+    type: EssenceBoolean
+    default: false
+  - name: timeline
+    type: EssenceText
+    default: 2009-2011
+  - name: title
+    type: EssenceText
+    default: Our Humble Beginnings
+  - name: picture
+    type: EssencePicture
+  - name: description
+    type: EssenceRichtext
+    default: <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>

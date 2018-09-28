@@ -1,0 +1,18 @@
+<div class="col-md-4 col-sm-6 portfolio-item">
+  <%- cache(element) do -%>
+    <%= element_view_for(element) do |el| -%>
+      <a class="portfolio-link">
+        <div class="portfolio-hover">
+          <div class="portfolio-hover-content">
+            <i class="fa fa-plus fa-3x"></i>
+          </div>
+        </div>
+        <%= el.render(:background, {}, { class: 'img-fluid' }) %>
+      </a>
+      <div class="portfolio-caption">
+        <h4><%= el.render :title %></h4>
+        <p class="text-muted"><%= el.render :description %></p>
+      </div>
+    <%- end -%>
+  <%- end -%>
+</div>

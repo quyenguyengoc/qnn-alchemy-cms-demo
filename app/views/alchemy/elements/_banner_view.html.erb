@@ -1,0 +1,13 @@
+<%- cache(element) do -%>
+  <%= element_view_for(element) do |el| -%>
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-lead-in"><%= el.render :intro_lead %></div>
+          <div class="intro-heading text-uppercase"><%= el.render :intro_heading %></div>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services"><%= el.render :more_btn %></a>
+        </div>
+      </div>
+    </header>
+  <%- end -%>
+<%- end -%>
